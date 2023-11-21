@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./TripleMatrix.css"
 
 const TripleMatrix = () => {
   const matrix1 = [[], [], []];
@@ -90,7 +91,9 @@ const TripleMatrix = () => {
     for(var i=0; i < matrix1.length; i++){
         for (var j = 0; j < matrix1.length; j++) {
            console.log(result[i][j])
+           document.write(` <div class="display" style="color : aqua; "> | ${result[i][j]} | </div>`)
         }
+        document.write(`<br />`)
     }
     setCheck(true);
     
