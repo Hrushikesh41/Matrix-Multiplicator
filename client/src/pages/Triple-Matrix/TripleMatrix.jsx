@@ -69,7 +69,7 @@ const TripleMatrix = () => {
 
   const handleMatElement7 = (e) => {
     matrix2[2][0] = e.target.value;
-  } 
+  }
 
   const handleMatElement8 = (e) => {
     matrix2[2][1] = e.target.value;
@@ -79,133 +79,143 @@ const TripleMatrix = () => {
     matrix2[2][2] = e.target.value;
   }
 
-  const handleSubmit = ()=>{
-    for(var i=0; i < matrix1.length; i++){
-        for (var j = 0; j < matrix1.length; j++) {
-           for(var k =0; k < matrix1.length; k++){
-                result[i][j] = matrix1[i][k] * matrix2[k][j];
-           }
+  const handleSubmit = () => {
+    for (var i = 0; i < matrix1.length; i++) {
+      for (var j = 0; j < matrix1.length; j++) {
+        for (var k = 0; k < matrix1.length; k++) {
+          result[i][j] = matrix1[i][k] * matrix2[k][j];
         }
+      }
     }
 
-    for(var i=0; i < matrix1.length; i++){
-        for (var j = 0; j < matrix1.length; j++) {
-           console.log(result[i][j])
-           document.write(` <div class="display" style="color : aqua; "> | ${result[i][j]} | </div>`)
-        }
-        document.write(`<br />`)
+    for (var i = 0; i < matrix1.length; i++) {
+      for (var j = 0; j < matrix1.length; j++) {
+        console.log(result[i][j])
+        document.write(` <div class="display" style="color : aqua; "> | ${result[i][j]} | </div>`)
+      }
+      document.write(`<br />`)
     }
     setCheck(true);
-    
-}
+
+  }
 
   return (
     <>
-        <div>
-                <section className='sec1'>
-                    <div className='firstMat'>
-                        <label htmlFor="element1">Enter First Element</label>
-                        <input type="number" name='e1' onChange={handleElement1} />
-                        <br />
+      <div>
+        <section className='sec1'>
+          <div className='firstMat'>
+            <h3>Enter Elements of First Matrix</h3>
+            <div className='col'>
+              <div className='col1'><p>C1</p></div>
+              <div className='col2'><p>C2</p></div>
+            </div>
 
-                        <label htmlFor="element1">Enter Second Element</label>
-                        <input type="number" name='e2' onChange={handleElement2} />
-                        <br />
+            <div className='row1'>
+              <div className='e1'>
+                <input type="number" name='e1' onChange={handleElement1} />
+                <br />
+              </div>
+              <div className='e2'>
+                <input type="number" name='e2' onChange={handleElement2} />
+                <br />
+              </div>
+              <div className='e3'>
+                <input type="number" name='e3' onChange={handleElement3} />
+                <br />
+              </div>
+            </div>
 
-                        <label htmlFor="element1">Enter Third Element</label>
-                        <input type="number" name='e3' onChange={handleElement3} />
-                        <br />
+            <div className='row2'>
+              <div className='e4'>
+                <input type="number" name='e4' onChange={handleElement4} />
+                <br />
+              </div>
+              <div className='e5'>
+                <input type="number" name='e4' onChange={handleElement5} />
+                <br />
+              </div>
+              <div className='e6'>
+                <input type="number" name='e4' onChange={handleElement6} />
+                <br />
+              </div>
+            </div>
 
-                        <label htmlFor="element1">Enter Fourth Element</label>
-                        <input type="number" name='e4' onChange={handleElement4} />
-                        <br />
+            <div className='row3'>
+              <div className='e7'>
+                <input type="number" name='e4' onChange={handleElement7} />
+                <br />
+              </div>
+              <div className='e8'>
+                <input type="number" name='e4' onChange={handleElement8} />
+                <br />
+              </div>
+              <div className='e9'>
+                <input type="number" name='e4' onChange={handleElement9} />
+                <br />
+              </div>
+            </div>
 
-                        <label htmlFor="element1">Enter Fifth Element</label>
-                        <input type="number" name='e4' onChange={handleElement5} />
-                        <br />
 
-                        <label htmlFor="element1">Enter Sixth Element</label>
-                        <input type="number" name='e4' onChange={handleElement6} />
-                        <br />
+          </div>
+        </section>
+        <section className='sec2'>
+          <div className='secondMat'>
+            <h3>Enter Element of Second Matrix</h3>
+            <div className='row1'>
+              <input type="number" name='e1' onChange={handleMatElement1} />
+              <br />
 
-                        <label htmlFor="element1">Enter Seventh Element</label>
-                        <input type="number" name='e4' onChange={handleElement7} />
-                        <br />
+              <input type="number" name='e2' onChange={handleMatElement2} />
+              <br />
 
-                        <label htmlFor="element1">Enter Eight Element</label>
-                        <input type="number" name='e4' onChange={handleElement8} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Nineth Element</label>
-                        <input type="number" name='e4' onChange={handleElement9} />
-                        <br />
-
-                    </div>
-                </section>
-                <section className='sec2'>
-                    <div className='secondMat'>
-                        <label htmlFor="element1">Enter First Element</label>
-                        <input type="number" name='e1' onChange={handleMatElement1} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Second Element</label>
-                        <input type="number" name='e2' onChange={handleMatElement2} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Third Element</label>
-                        <input type="number" name='e3' onChange={handleMatElement3} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Fourth Element</label>
-                        <input type="number" name='e4' onChange={handleMatElement4} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Fifth Element</label>
-                        <input type="number" name='e4' onChange={handleMatElement5} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Sixth Element</label>
-                        <input type="number" name='e4' onChange={handleMatElement6} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Seventh Element</label>
-                        <input type="number" name='e4' onChange={handleMatElement7} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Eighth Element</label>
-                        <input type="number" name='e4' onChange={handleMatElement8} />
-                        <br />
-
-                        <label htmlFor="element1">Enter Nineth Element</label>
-                        <input type="number" name='e4' onChange={handleMatElement9} />
-                        <br />
-
-                    </div>
-                </section>
-
-                <button onClick={handleSubmit}>Calculate</button>
-
-                <section className='sec3'>
-                    {check ? <>
-                        {result.map((row, i)=>{
-                            return(
-                                <>
-                                    {result.map((col, j)=>{
-                                        return(
-                                            <>
-                                                {result[row][col]}
-                                            </>
-                                        )
-                                    })}
-                                </>
-                            )
-                            
-                        })}
-                    </> : <></>
-                    }
-                </section>
+              <input type="number" name='e3' onChange={handleMatElement3} />
+              <br />
+            </div>
+            <div className='row2'>
 
             </div>
+            <div className='row3'>
+              <input type="number" name='e4' onChange={handleMatElement7} />
+              <br />
+
+              <input type="number" name='e4' onChange={handleMatElement8} />
+              <br />
+
+              <input type="number" name='e4' onChange={handleMatElement9} />
+              <br />
+            </div>
+
+
+
+
+
+
+          </div>
+        </section>
+
+        <button onClick={handleSubmit}>Calculate</button>
+
+        <section className='sec3'>
+          {check ? <>
+            {result.map((row, i) => {
+              return (
+                <>
+                  {result.map((col, j) => {
+                    return (
+                      <>
+                        {result[row][col]}
+                      </>
+                    )
+                  })}
+                </>
+              )
+
+            })}
+          </> : <></>
+          }
+        </section>
+
+      </div>
     </>
   )
 }

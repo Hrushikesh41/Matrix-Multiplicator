@@ -63,59 +63,77 @@ const Matrix = () => {
             <div className='app'>
                 <section className='sec1'>
                     <div className='firstMat'>
-                        <div className='e1'>
-                            <label htmlFor="element1">Enter First Element : </label>
-                            <input type="number" name='e1' onChange={handleElement1} />
-                            <br />
+                        <h3>
+                            Enter Elements of Matrix 1
+                        </h3>
+                        <div className='col'>
+                            <div className='col1'><p>C1</p></div>
+                            <div className='col2'><p>C2</p></div>
+                        </div>
+                        <div className='row1'>
+                            <p>R1</p>
+                            <div className='e1'>
+                                <input type="number" name='e1' onChange={handleElement1} />
+                                <br />
+                            </div>
+
+                            <div className='e2'>
+                                <input type="number" name='e2' onChange={handleElement2} />
+                                <br />
+                            </div>
                         </div>
 
-                        <div className='e2'>
-                            <label htmlFor="element1">Enter Second Element</label>
-                            <input type="number" name='e2' onChange={handleElement2} />
-                            <br />
+                        <div className='row2'>
+                            <p> R2</p>
+                            <div className='e3'>
+                                <input type="number" name='e3' onChange={handleElement3} />
+                                <br />
+                            </div>
+
+                            <div className='e4'>
+                                <input type="number" name='e4' onChange={handleElement4} />
+                                <br />
+                            </div>
                         </div>
 
-                        <div className='e3'>
-                            <label htmlFor="element1">Enter Third Element</label>
-                            <input type="number" name='e3' onChange={handleElement3} />
-                            <br />
-                        </div>
 
-                        <div className='e4'>
-                            <label htmlFor="element1">Enter Fourth Element</label>
-                            <input type="number" name='e4' onChange={handleElement4} />
-                            <br />
-                        </div>
 
 
                     </div>
                 </section>
                 <section className='sec2'>
                     <div className='secondMat'>
+                        <h3>Enter Elements of Matrix 2</h3>
+                        <div className='col'>
+                            <div className='col1'><p>C1</p></div>
+                            <div className='col2'><p>C2</p></div>
+                        </div>
+                        <div className='row1'>
+                        <p>R1</p>
+                            <div className='e1'>
+                                <input type="number" name='e1' onChange={handleMatElement1} />
+                                <br />
+                            </div>
 
-                        <div className='e1'>
-                            <label htmlFor="element1">Enter First Element</label>
-                            <input type="number" name='e1' onChange={handleMatElement1} />
-                            <br />
+                            <div className='e2'>
+                                <input type="number" name='e2' onChange={handleMatElement2} />
+                                <br />
+                            </div>
                         </div>
 
-                        <div className='e2'>
-                            <label htmlFor="element1">Enter Second Element</label>
-                            <input type="number" name='e2' onChange={handleMatElement2} />
-                            <br />
+                        <div className='row2'>
+                        <p>R2</p>
+                            <div className='e3'>
+                                <input type="number" name='e3' onChange={handleMatElement3} />
+                                <br />
+                            </div>
+
+                            <div className='e4'>
+                                <input type="number" name='e4' onChange={handleMatElement4} />
+                                <br />
+                            </div>
                         </div>
 
-                        <div className='e3'>
-                            <label htmlFor="element1">Enter Third Element</label>
-                            <input type="number" name='e3' onChange={handleMatElement3} />
-                            <br />
-                        </div>
-
-                        <div className='e4'>
-                            <label htmlFor="element1">Enter Fourth Element</label>
-                            <input type="number" name='e4' onChange={handleMatElement4} />
-                            <br />
-                        </div>
 
                     </div>
                 </section>
