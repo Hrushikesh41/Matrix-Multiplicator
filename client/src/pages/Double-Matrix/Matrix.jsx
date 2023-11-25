@@ -40,21 +40,20 @@ const Matrix = () => {
     }
 
     const handleSubmit = () => {
-        for (var i = 0; i < matrix1.length; i++) {
-            for (var j = 0; j < matrix1.length; j++) {
-                for (var k = 0; k < matrix1.length; k++) {
-                    result[i][j] = matrix1[i][k] * matrix2[k][j];
-                }
-            }
-        }
+        console.log(matrix1.length)
+        result[0][0] = (matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]);
+        result[0][1] = (matrix1[0][0] * matrix2[0][1]) +( matrix1[0][1] * matrix2[1][1]);
+        result[1][0] = (matrix1[1][0] * matrix2[0][0]) +( matrix1[1][1] * matrix2[1][0]);
+        result[1][1] = (matrix1[0][1] * matrix2[1][0]) +( matrix1[1][1] * matrix2[1][1]);
 
         for (var i = 0; i < matrix1.length; i++) {
             for (var j = 0; j < matrix1.length; j++) {
                 console.log(result[i][j])
-                document.write(` | ${result[i][j]} |`)
+                document.write(` <div class="result-app">
+                <div> ${result[i][j]} </div>
+                </div>`)
             }
         }
-        setCheck(true);
 
     }
 

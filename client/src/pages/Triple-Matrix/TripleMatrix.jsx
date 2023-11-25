@@ -80,13 +80,15 @@ const TripleMatrix = () => {
   }
 
   const handleSubmit = () => {
-    for (var i = 0; i < matrix1.length; i++) {
-      for (var j = 0; j < matrix1.length; j++) {
-        for (var k = 0; k < matrix1.length; k++) {
-          result[i][j] = matrix1[i][k] * matrix2[k][j];
-        }
-      }
-    }
+    result[0][0] = (matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]) + (matrix1[0][2] * matrix2[2][0]);
+    result[0][1] = (matrix1[0][0] * matrix2[0][1]) + (matrix1[0][1] * matrix2[1][1]) + (matrix1[0][2] * matrix2[2][1]);
+    result[0][2] = (matrix1[0][0] * matrix2[0][2]) + (matrix1[0][1] * matrix2[1][2]) + (matrix1[0][2] * matrix2[2][2]);
+    result[1][0] = (matrix1[1][0] * matrix2[0][0]) + (matrix1[1][1] * matrix2[1][0]) + (matrix1[1][2] * matrix2[2][0]);
+    result[1][1] = (matrix1[1][0] * matrix2[0][1]) + (matrix1[1][1] * matrix2[1][1]) + (matrix1[1][2] * matrix2[2][1]);
+    result[1][2] = (matrix1[1][0] * matrix2[0][2]) + (matrix1[1][1] * matrix2[1][2]) + (matrix1[1][2] * matrix2[2][2]);
+    result[2][0] = (matrix1[2][0] * matrix2[0][0]) + (matrix1[2][1] * matrix2[1][0]) + (matrix1[2][2] * matrix2[2][0]);
+    result[2][1] = (matrix1[2][0] * matrix2[0][1]) + (matrix1[2][1] * matrix2[1][1]) + (matrix1[2][2] * matrix2[2][1]);
+    result[2][2] = (matrix1[2][0] * matrix2[0][2]) + (matrix1[2][1] * matrix2[1][2]) + (matrix1[2][2] * matrix2[2][2]);
 
     for (var i = 0; i < matrix1.length; i++) {
       for (var j = 0; j < matrix1.length; j++) {
@@ -101,16 +103,18 @@ const TripleMatrix = () => {
 
   return (
     <>
-      <div>
+      <div className='app'>
         <section className='sec1'>
           <div className='firstMat'>
             <h3>Enter Elements of First Matrix</h3>
             <div className='col'>
               <div className='col1'><p>C1</p></div>
               <div className='col2'><p>C2</p></div>
+              <div className='col2'><p>C3</p></div>
             </div>
 
             <div className='row1'>
+              <p>R1</p>
               <div className='e1'>
                 <input type="number" name='e1' onChange={handleElement1} />
                 <br />
@@ -126,6 +130,7 @@ const TripleMatrix = () => {
             </div>
 
             <div className='row2'>
+              <p>R2</p>
               <div className='e4'>
                 <input type="number" name='e4' onChange={handleElement4} />
                 <br />
@@ -141,6 +146,7 @@ const TripleMatrix = () => {
             </div>
 
             <div className='row3'>
+              <p>R3</p>
               <div className='e7'>
                 <input type="number" name='e4' onChange={handleElement7} />
                 <br />
@@ -161,61 +167,61 @@ const TripleMatrix = () => {
         <section className='sec2'>
           <div className='secondMat'>
             <h3>Enter Element of Second Matrix</h3>
+            <div className='col'>
+              <div className='col1'><p>C1</p></div>
+              <div className='col2'><p>C2</p></div>
+              <div className='col2'><p>C3</p></div>
+            </div>
             <div className='row1'>
-              <input type="number" name='e1' onChange={handleMatElement1} />
-              <br />
+            <p>R1</p>
+              <div className='e1'>
+                <input type="number" name='e1' onChange={handleMatElement1} />
+                <br />
+              </div>
+              <div className='e2'>
+                <input type="number" name='e2' onChange={handleMatElement2} />
+                <br />
 
-              <input type="number" name='e2' onChange={handleMatElement2} />
-              <br />
-
-              <input type="number" name='e3' onChange={handleMatElement3} />
-              <br />
+              </div>
+              <div className='e3'>
+                <input type="number" name='e3' onChange={handleMatElement3} />
+                <br />
+              </div>
             </div>
             <div className='row2'>
-
+              <p>R2</p>
+              <div className='e4'>
+                <input type="number" name='e4' onChange={handleMatElement4} />
+                <br />
+              </div>
+              <div className='e5'>
+                <input type="number" name='e4' onChange={handleMatElement5} />
+                <br />
+              </div>
+              <div className='e6'>
+                <input type="number" name='e4' onChange={handleMatElement6} />
+                <br />
+              </div>
             </div>
             <div className='row3'>
-              <input type="number" name='e4' onChange={handleMatElement7} />
-              <br />
-
-              <input type="number" name='e4' onChange={handleMatElement8} />
-              <br />
-
-              <input type="number" name='e4' onChange={handleMatElement9} />
-              <br />
+              <p>R3</p>
+              <div className='e7'>
+                <input type="number" name='e4' onChange={handleMatElement7} />
+                <br />
+              </div>
+              <div className='e8'>
+                <input type="number" name='e4' onChange={handleMatElement8} />
+                <br />
+              </div>
+              <div className='e9'>
+                <input type="number" name='e4' onChange={handleMatElement9} />
+                <br />
+              </div>
             </div>
-
-
-
-
-
-
           </div>
         </section>
-
-        <button onClick={handleSubmit}>Calculate</button>
-
-        <section className='sec3'>
-          {check ? <>
-            {result.map((row, i) => {
-              return (
-                <>
-                  {result.map((col, j) => {
-                    return (
-                      <>
-                        {result[row][col]}
-                      </>
-                    )
-                  })}
-                </>
-              )
-
-            })}
-          </> : <></>
-          }
-        </section>
-
       </div>
+      <button onClick={handleSubmit}>Calculate</button>
     </>
   )
 }
