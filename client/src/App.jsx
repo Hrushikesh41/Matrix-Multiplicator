@@ -14,8 +14,8 @@ function App() {
         <Routes>
          
           <Route exact path='/' element={<Matrix />} />
-          <Route exact path='/3X3' element={<TripleMatrix />} />
-          <Route exact path='/2X3' element={<DoubleMatrix />} />
+          <Route exact path='https://multify-matrix.netlify.app/3X3' element={<TripleMatrix />} />
+          <Route exact path='https://multify-matrix.netlify.app/2X3' element={<DoubleMatrix />} />
         </Routes>
       </BrowserRouter>
     </>
