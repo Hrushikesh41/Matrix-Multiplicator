@@ -1,7 +1,7 @@
 .app{
     display: flex;
-    height: 80vh;
-    width: 90vw;
+    height: 65vh;
+    width: 100vw;
     justify-content: center;
     align-items: center;
 }
@@ -190,4 +190,38 @@ button{
     font-size: 1rem;
     background-color: #5c5d5ec4;
     border: none;
+    margin-left: 10rem;
+}
+
+/* styling resultant page */
+
+.sec3{
+    width: 100vw;
+}
+
+.sec3 h1{
+    margin-bottom: 2.8rem;
+}
+
+.result-rows{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.result-rows .row-element{
+    width: 5%;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    padding: 0.5rem;
+}
+
+.row-element:first-child{
+    border: none;
+    border-left: 1px solid white;
+}
+
+.row-element:last-child{
+    border-right: 1px solid white;
 }

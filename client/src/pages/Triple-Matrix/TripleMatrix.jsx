@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import "./TripleMatrix.css"
+import Navbar from '../../components/Header/Navbar';
 
 const TripleMatrix = () => {
   const matrix1 = [[], [], []];
   const matrix2 = [[], [], []];
   const result = [[], [], []];
   const [check, setCheck] = useState(false);
+  const [resultMat, setResultMat] = useState([[], []]);
+
 
   const handleElement1 = (e) => {
     matrix1[0][0] = e.target.value;
@@ -80,29 +83,34 @@ const TripleMatrix = () => {
   }
 
   const handleSubmit = () => {
-    result[0][0] = (matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]) + (matrix1[0][2] * matrix2[2][0]);
-    result[0][1] = (matrix1[0][0] * matrix2[0][1]) + (matrix1[0][1] * matrix2[1][1]) + (matrix1[0][2] * matrix2[2][1]);
-    result[0][2] = (matrix1[0][0] * matrix2[0][2]) + (matrix1[0][1] * matrix2[1][2]) + (matrix1[0][2] * matrix2[2][2]);
-    result[1][0] = (matrix1[1][0] * matrix2[0][0]) + (matrix1[1][1] * matrix2[1][0]) + (matrix1[1][2] * matrix2[2][0]);
-    result[1][1] = (matrix1[1][0] * matrix2[0][1]) + (matrix1[1][1] * matrix2[1][1]) + (matrix1[1][2] * matrix2[2][1]);
-    result[1][2] = (matrix1[1][0] * matrix2[0][2]) + (matrix1[1][1] * matrix2[1][2]) + (matrix1[1][2] * matrix2[2][2]);
-    result[2][0] = (matrix1[2][0] * matrix2[0][0]) + (matrix1[2][1] * matrix2[1][0]) + (matrix1[2][2] * matrix2[2][0]);
-    result[2][1] = (matrix1[2][0] * matrix2[0][1]) + (matrix1[2][1] * matrix2[1][1]) + (matrix1[2][2] * matrix2[2][1]);
-    result[2][2] = (matrix1[2][0] * matrix2[0][2]) + (matrix1[2][1] * matrix2[1][2]) + (matrix1[2][2] * matrix2[2][2]);
+    // result[0][0] = (matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]) + (matrix1[0][2] * matrix2[2][0]);
+    // result[0][1] = (matrix1[0][0] * matrix2[0][1]) + (matrix1[0][1] * matrix2[1][1]) + (matrix1[0][2] * matrix2[2][1]);
+    // result[0][2] = (matrix1[0][0] * matrix2[0][2]) + (matrix1[0][1] * matrix2[1][2]) + (matrix1[0][2] * matrix2[2][2]);
+    // result[1][0] = (matrix1[1][0] * matrix2[0][0]) + (matrix1[1][1] * matrix2[1][0]) + (matrix1[1][2] * matrix2[2][0]);
+    // result[1][1] = (matrix1[1][0] * matrix2[0][1]) + (matrix1[1][1] * matrix2[1][1]) + (matrix1[1][2] * matrix2[2][1]);
+    // result[1][2] = (matrix1[1][0] * matrix2[0][2]) + (matrix1[1][1] * matrix2[1][2]) + (matrix1[1][2] * matrix2[2][2]);
+    // result[2][0] = (matrix1[2][0] * matrix2[0][0]) + (matrix1[2][1] * matrix2[1][0]) + (matrix1[2][2] * matrix2[2][0]);
+    // result[2][1] = (matrix1[2][0] * matrix2[0][1]) + (matrix1[2][1] * matrix2[1][1]) + (matrix1[2][2] * matrix2[2][1]);
+    // result[2][2] = (matrix1[2][0] * matrix2[0][2]) + (matrix1[2][1] * matrix2[1][2]) + (matrix1[2][2] * matrix2[2][2]);
 
-    for (var i = 0; i < matrix1.length; i++) {
-      for (var j = 0; j < matrix1.length; j++) {
-        console.log(result[i][j])
-        document.write(` <div class="display" style="color : aqua; "> | ${result[i][j]} | </div>`)
-      }
-      document.write(`<br />`)
-    }
+    setResultMat([[(matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]) + (matrix1[0][2] * matrix2[2][0]), (matrix1[0][0] * matrix2[0][1]) + (matrix1[0][1] * matrix2[1][1]) + (matrix1[0][2] * matrix2[2][1]), (matrix1[0][0] * matrix2[0][2]) + (matrix1[0][1] * matrix2[1][2]) + (matrix1[0][2] * matrix2[2][2])],
+    [(matrix1[1][0] * matrix2[0][0]) + (matrix1[1][1] * matrix2[1][0]) + (matrix1[1][2] * matrix2[2][0]), (matrix1[1][0] * matrix2[0][1]) + (matrix1[1][1] * matrix2[1][1]) + (matrix1[1][2] * matrix2[2][1]), (matrix1[1][0] * matrix2[0][2]) + (matrix1[1][1] * matrix2[1][2]) + (matrix1[1][2] * matrix2[2][2])],
+    [(matrix1[2][0] * matrix2[0][0]) + (matrix1[2][1] * matrix2[1][0]) + (matrix1[2][2] * matrix2[2][0]), (matrix1[2][0] * matrix2[0][1]) + (matrix1[2][1] * matrix2[1][1]) + (matrix1[2][2] * matrix2[2][1]), (matrix1[2][0] * matrix2[0][2]) + (matrix1[2][1] * matrix2[1][2]) + (matrix1[2][2] * matrix2[2][2])]]);
+
+    // for (var i = 0; i < matrix1.length; i++) {
+    //   for (var j = 0; j < matrix1.length; j++) {
+    //     console.log(result[i][j])
+    //     document.write(` <div class="display" style="color : aqua; "> | ${result[i][j]} | </div>`)
+    //   }
+    //   document.write(`<br />`)
+    // }
     setCheck(true);
 
   }
 
   return (
     <>
+      <Navbar />
       <div className='app'>
         <section className='sec1'>
           <div className='firstMat'>
@@ -173,7 +181,7 @@ const TripleMatrix = () => {
               <div className='col2'><p>C3</p></div>
             </div>
             <div className='row1'>
-            <p>R1</p>
+              <p>R1</p>
               <div className='e1'>
                 <input type="number" name='e1' onChange={handleMatElement1} />
                 <br />
@@ -221,6 +229,36 @@ const TripleMatrix = () => {
           </div>
         </section>
       </div>
+      <section className='sec3'>
+        <div className='resultMat'>
+          <h1> The Resultant Matrix : </h1>
+          {resultMat.length > 0 ? <>
+            {resultMat.map((element, key) => {
+              return (
+                <>
+                  <div className='result-rows'>
+                    {element.map((index, keys) => {
+                      console.log(index)
+
+                      return (
+                        <>
+                          <div className='row-element'>
+                            {index}
+                          </div>
+                        </>
+                      )
+                    })}
+                  </div>
+                </>
+
+
+              )
+            })}
+          </>
+            :
+            <></>}
+        </div>
+      </section>
       <button onClick={handleSubmit}>Calculate</button>
     </>
   )

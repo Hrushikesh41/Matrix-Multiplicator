@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import "./Matrix.css"
+import "./DoubleMatrix.css"
 import Navbar from '../../components/Header/Navbar';
 
-const Matrix = () => {
+const DoubleMatrix = () => {
     const matrix1 = [[], []];
-    const matrix2 = [[], []];
+    const matrix2 = [[], [], []];
     const result = [[], []];
     const [check, setCheck] = useState(false);
     const [resultMat, setResultMat] = useState([[], []]);
@@ -18,11 +18,19 @@ const Matrix = () => {
     }
 
     const handleElement3 = (e) => {
-        matrix1[1][0] = e.target.value;
+        matrix1[0][2] = e.target.value;
     }
 
     const handleElement4 = (e) => {
+        matrix1[1][0] = e.target.value;
+    }
+
+    const handleElement5 = (e) => {
         matrix1[1][1] = e.target.value;
+    }
+
+    const handleElement6 = (e) => {
+        matrix1[1][2] = e.target.value;
     }
 
     const handleMatElement1 = (e) => {
@@ -40,6 +48,13 @@ const Matrix = () => {
     const handleMatElement4 = (e) => {
         matrix2[1][1] = e.target.value;
     }
+    const handleMatElement5 = (e) => {
+        matrix2[2][0] = e.target.value;
+    }
+
+    const handleMatElement6 = (e) => {
+        matrix2[2][1] = e.target.value;
+    }
 
     const handleSubmit = () => {
         result[0][0] = (matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]);
@@ -47,7 +62,8 @@ const Matrix = () => {
         result[1][0] = (matrix1[1][0] * matrix2[0][0]) + (matrix1[1][1] * matrix2[1][0]);
         result[1][1] = (matrix1[0][1] * matrix2[1][0]) + (matrix1[1][1] * matrix2[1][1]);
 
-        setResultMat([[(matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]), (matrix1[0][0] * matrix2[0][1]) + (matrix1[0][1] * matrix2[1][1])], [(matrix1[1][0] * matrix2[0][0]) + (matrix1[1][1] * matrix2[1][0]), (matrix1[0][1] * matrix2[1][0]) + (matrix1[1][1] * matrix2[1][1])]]);
+        setResultMat([[(matrix1[0][0] * matrix2[0][0]) + (matrix1[0][1] * matrix2[1][0]) + (matrix1[0][2] * matrix2[2][0]), (matrix1[0][0] * matrix2[0][1]) + (matrix1[0][1] * matrix2[1][1]) + (matrix1[0][2] * matrix2[2][1])],
+        [(matrix1[1][0] * matrix2[0][0]) + (matrix1[1][1] * matrix2[1][0]) + (matrix1[1][2] * matrix2[2][0]), (matrix1[1][0] * matrix2[0][1]) + (matrix1[1][1] * matrix2[1][1]) + (matrix1[1][2] * matrix2[2][1])]]);
 
 
         // for (var i = 0; i < matrix1.length; i++) {
@@ -73,6 +89,7 @@ const Matrix = () => {
                         <div className='col'>
                             <div className='col1'><p>C1</p></div>
                             <div className='col2'><p>C2</p></div>
+                            <div className='col2'><p>C3</p></div>
                         </div>
                         <div className='row1'>
                             <p>R1</p>
@@ -85,17 +102,25 @@ const Matrix = () => {
                                 <input type="number" name='e2' onChange={handleElement2} />
                                 <br />
                             </div>
+                            <div className='e3'>
+                                <input type="number" name='e4' onChange={handleElement3} />
+                                <br />
+                            </div>
                         </div>
 
                         <div className='row2'>
                             <p> R2</p>
-                            <div className='e3'>
-                                <input type="number" name='e3' onChange={handleElement3} />
+                            <div className='e4'>
+                                <input type="number" name='e3' onChange={handleElement4} />
                                 <br />
                             </div>
 
-                            <div className='e4'>
-                                <input type="number" name='e4' onChange={handleElement4} />
+                            <div className='e5'>
+                                <input type="number" name='e4' onChange={handleElement5} />
+                                <br />
+                            </div>
+                            <div className='e6'>
+                                <input type="number" name='e4' onChange={handleElement6} />
                                 <br />
                             </div>
                         </div>
@@ -105,8 +130,8 @@ const Matrix = () => {
 
                     </div>
                 </section>
-                <section className='sec2'>
-                    <div className='secondMat'>
+                <section className='sec2d'>
+                    <div className='secondMat1'>
                         <h3>Enter Elements of Matrix 2</h3>
                         <div className='col'>
                             <div className='col1'><p>C1</p></div>
@@ -137,8 +162,18 @@ const Matrix = () => {
                                 <br />
                             </div>
                         </div>
+                        <div className='row2'>
+                            <p>R3</p>
+                            <div className='e3'>
+                                <input type="number" name='e3' onChange={handleMatElement5} />
+                                <br />
+                            </div>
 
-
+                            <div className='e4'>
+                                <input type="number" name='e4' onChange={handleMatElement6} />
+                                <br />
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -178,4 +213,4 @@ const Matrix = () => {
     )
 }
 
-export default Matrix
+export default DoubleMatrix
